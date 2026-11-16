@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Schoology – Guru</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css"></head>
+<body>
+<header><div class="logo">Schoology</div><span class="role">Guru</span><nav id="nav"></nav>
+<!-- [FITUR 10] PILIHAN KELAS (guru) -->
+<select id="kls" aria-label="Pilih kelas" onchange="setKelas(this.value)"></select>
+<button class="av" id="av" style="margin-left:0" aria-label="Profil" onclick="go('profile.html')"></button></header>
+<main id="app"></main><div id="toast" role="status"></div>
+<script src="../assets/js/database.js"></script>
+<script src="../assets/js/shared.js"></script>
+<script src="../assets/js/guru/guru-shared.js"></script>
+<script src="../assets/js/guru/tanya-jawab.js"></script>
+</body></html>
