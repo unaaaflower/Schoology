@@ -1,0 +1,535 @@
+/* Seluruh halaman (login, guru, siswa) memakai satu file CSS ini supaya tampilan konsisten. */
+/* Schoology - gaya bersama (palet: Buttercup Sky, Dewy Blue, Sunwashed, Cloud Puff, Morning Breeze) */
+:root {
+    color-scheme: light;
+    --bg: #FFF7D6;
+    --card: #FFFDF3;
+    --line: #EADFB0;
+    --b1: #A8C6E7;
+    --b2: #7FA8D6;
+    --y1: #FFF2B2;
+    --y2: #FFE08A;
+    --ink: #23405F;
+    --ink2: #5F7692;
+    --h: #3F6593;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px)
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 15px/1.6 Nunito, system-ui, sans-serif;
+    min-height: 100vh
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    color: var(--h);
+    margin: 0;
+    line-height: 1.2
+}
+
+h1 {
+    font-size: 32px
+}
+
+h2 {
+    font-size: 21px;
+    margin-bottom: 10px
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+    color: inherit
+}
+
+:focus-visible {
+    outline: 2px solid var(--h);
+    outline-offset: 2px
+}
+
+header {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 5;
+    background: var(--b1);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 64px;
+    padding: 0 clamp(16px, 4vw, 40px);
+    box-shadow: 0 2px 10px rgba(63, 101, 147, .2)
+}
+
+.logo {
+    font: 700 27px "Cormorant Garamond", serif;
+    color: var(--ink)
+}
+
+.role {
+    background: var(--y2);
+    border-radius: 99px;
+    padding: 1px 12px;
+    font-size: 12px;
+    font-weight: 700
+}
+
+nav {
+    display: flex;
+    gap: 2px
+}
+
+nav button {
+    background: none;
+    border: 0;
+    padding: 7px 12px;
+    border-radius: 99px;
+    cursor: pointer;
+    font-weight: 600
+}
+
+nav button:hover {
+    background: rgba(255, 255, 255, .4)
+}
+
+nav button[aria-current=page] {
+    background: var(--y1);
+    box-shadow: 0 1px 4px rgba(63, 101, 147, .25)
+}
+
+header select {
+    width: auto;
+    margin: 0;
+    padding: 6px 10px
+}
+
+.av {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--y2);
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    margin-left: auto;
+    cursor: pointer;
+    border: 0
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px clamp(16px, 4vw, 40px) 40px
+}
+
+.pt {
+    text-align: center
+}
+
+.sub {
+    color: var(--ink2);
+    text-align: center;
+    margin: 4px 0 24px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--y2)
+}
+
+.grid {
+    display: grid;
+    gap: 16px
+}
+
+.cols {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    align-items: start
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 2px 10px rgba(127, 168, 214, .15)
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    background: linear-gradient(150deg, var(--b1), var(--y1));
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 18px;
+    overflow: hidden
+}
+
+.hero p {
+    margin: 6px 0 14px;
+    max-width: 440px
+}
+
+.sun {
+    width: 110px;
+    height: 110px;
+    flex: none;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff6c4 30%, var(--y2) 70%);
+    box-shadow: 0 0 50px 20px rgba(255, 224, 138, .6)
+}
+
+.row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 11px 0;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer
+}
+
+.row:last-child {
+    border-bottom: 0
+}
+
+.row h3 {
+    font: 600 15px Nunito;
+    color: var(--ink)
+}
+
+.row:hover h3 {
+    color: var(--h)
+}
+
+.row .grow {
+    flex: 1;
+    min-width: 0
+}
+
+small,
+.mut {
+    color: var(--ink2)
+}
+
+.tag {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 99px;
+    border: 1px solid currentColor;
+    white-space: nowrap;
+    background: #fff8
+}
+
+.t-belum {
+    color: #5F7692
+}
+
+.t-kumpul,
+.t-I {
+    color: #2F63B5
+}
+
+.t-nilai,
+.t-H {
+    color: #2E7D4B
+}
+
+.t-revisi,
+.t-S {
+    color: #B3601A
+}
+
+.t-telat,
+.t-A {
+    color: #B93A2B
+}
+
+.btn {
+    background: var(--b2);
+    color: #14283F;
+    border: 0;
+    border-radius: 99px;
+    padding: 9px 20px;
+    font-weight: 700;
+    cursor: pointer
+}
+
+.btn:hover {
+    background: var(--b1)
+}
+
+.btn.y {
+    background: var(--y2)
+}
+
+.btn.ghost {
+    background: none;
+    border: 1px solid var(--b2)
+}
+
+.btn.sm {
+    padding: 4px 14px;
+    font-size: 13px
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 10px
+}
+
+input[type=checkbox],
+input[type=radio] {
+    width: auto;
+    margin: 0
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical
+}
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    justify-content: center;
+    color: var(--ink2);
+    margin: 6px 0 22px
+}
+
+.back {
+    background: none;
+    border: 0;
+    color: var(--h);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 8px
+}
+
+.wrap {
+    overflow-x: auto
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse
+}
+
+th,
+td {
+    text-align: left;
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--line)
+}
+
+th {
+    color: var(--ink2);
+    font-weight: 600;
+    font-size: 13px
+}
+
+td input,
+td select {
+    margin: 0;
+    padding: 6px 8px
+}
+
+.opt {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    background: #fff
+}
+
+.ok {
+    background: #DFF3E4 !important;
+    border-color: #2E7D4B !important
+}
+
+.no {
+    background: #FBE0DC !important;
+    border-color: #B93A2B !important
+}
+
+.rep {
+    border-left: 3px solid var(--y2);
+    padding: 2px 0 2px 12px;
+    margin: 8px 0
+}
+
+.narrow {
+    max-width: 720px;
+    margin: 0 auto
+}
+
+/* praktek interaktif */
+.pz {
+    display: grid;
+    gap: 10px;
+    margin: 12px 0
+}
+
+.pool {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px;
+    background: var(--y1);
+    border-radius: 12px;
+    min-height: 50px
+}
+
+.chip {
+    background: var(--b1);
+    border-radius: 10px;
+    padding: 6px 14px;
+    font-weight: 700;
+    cursor: grab;
+    user-select: none
+}
+
+.chip.sel {
+    outline: 3px solid var(--h)
+}
+
+.slot {
+    border: 2px dashed var(--b2);
+    border-radius: 12px;
+    padding: 10px 12px;
+    min-height: 74px;
+    background: #fff
+}
+
+.slot .chip {
+    display: inline-block;
+    margin-top: 6px
+}
+
+.prow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 8px 12px;
+    cursor: grab
+}
+
+.prow code {
+    font: 14px ui-monospace, monospace
+}
+
+.mv {
+    border: 1px solid var(--b2);
+    background: var(--y1);
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 4px
+}
+
+.auth {
+    max-width: 440px;
+    margin: 5vh auto 0;
+    padding: 0 16px
+}
+
+.auth .logo {
+    font-size: 44px;
+    text-align: center
+}
+
+#toast {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+    background: var(--ink);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 99px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s;
+    z-index: 9
+}
+
+#toast.on {
+    opacity: 1
+}
+
+@media(max-width:820px) {
+    nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--b1);
+        padding: 6px 2px calc(6px + env(safe-area-inset-bottom, 0px));
+        justify-content: space-around;
+        box-shadow: 0 -2px 10px rgba(63, 101, 147, .2);
+        z-index: 5
+    }
+
+    nav button {
+        padding: 8px 1px;
+        font-size: 10.5px;
+        flex: 1
+    }
+
+    header {
+        height: 56px;
+        gap: 8px
+    }
+
+    .cols {
+        grid-template-columns: 1fr
+    }
+
+    .sun {
+        display: none
+    }
+
+    main {
+        padding-bottom: 90px
+    }
+
+    h1 {
+        font-size: 27px
+    }
+
+    #toast {
+        bottom: calc(80px + env(safe-area-inset-bottom, 0px))
+    }
+}
